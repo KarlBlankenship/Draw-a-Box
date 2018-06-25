@@ -16,14 +16,21 @@
 
 import javax.swing.JOptionPane;		// Import for creation of dialog boxes.
 
+import java.awt.Canvas; 			//
+import java.awt.Graphics; 			// Import for drawing graphics.
+import javax.swing.JFrame;			//
+
 
 /*
 	The DrawABox class will create instances of the Box class and will diplay
 	a visual representation of the box in an output window.
 */
 
-public class DrawABox {
+public class DrawABox extends Canvas
+{
 
+	private static final long serialVersionUID = 1L;
+	
 	public static void main(String[] args) {
 		
 		// Rough plan...
@@ -52,53 +59,47 @@ public class DrawABox {
 			// Box Class is working.
 		*/
 		
-		// Creation of dialog box code to ask for inputs.
-		// Test display a message.
-		JOptionPane.showMessageDialog(null,  "Hello Box");
-		// Test entering a dimension.
-		String dimension;
-		dimension = JOptionPane.showInputDialog("Enter a dimension.");
-		// Test displaying entered dimension.
-		JOptionPane.showMessageDialog(null,  dimension);
-		// Convert dimension to a double.
-		double doubleDimension = 0.0;			// Initialize input as a double.
-		doubleDimension = Double.parseDouble(dimension);
-		System.out.println("Dimension as a double = " + doubleDimension);
-		// Test that it is a double.
-		System.out.println("Dimension x 3.5 = " + doubleDimension * 3.5);
-		// JOPtionPane requires a system exit.
-		System.exit(0);
+		/*
+			// Creation of dialog box code to ask for inputs.
+			// Test display a message.
+			JOptionPane.showMessageDialog(null,  "Hello Box");
+			// Test entering a dimension.
+			String dimension;
+			dimension = JOptionPane.showInputDialog("Enter a dimension.");
+			// Test displaying entered dimension.
+			JOptionPane.showMessageDialog(null,  dimension);
+			// Convert dimension to a double.
+			double doubleDimension = 0.0;			// Initialize input as a double.
+			doubleDimension = Double.parseDouble(dimension);
+			System.out.println("Dimension as a double = " + doubleDimension);
+			// Test that it is a double.
+			System.out.println("Dimension x 3.5 = " + doubleDimension * 3.5);
+			// JOPtionPane requires a system exit.
+			System.exit(0);
+			// Dialog boxes are working.
+		*/
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		 // Create a simple rectangle
+			JFrame frame = new JFrame("Rectangle"); 	// Create a new window frame.
+			Canvas canvas = new DrawABox(); 			// Create a new canvas object
+			canvas.setSize(400, 400); 					// Set canvas size.
+			frame.add(canvas); 							// Add the canvas to the frame.
+			frame.pack(); 								// Fit the canvas to the frame.
+			frame.setVisible(true);						// Make frame visible.
+		}
 
-	}
+	
+	/* 
+		The paint method will run when the canvas updates.(non-Javadoc)
+	 	@see java.awt.Canvas#paint(java.awt.Graphics)
+	 	
+	*/
+	
+	// How do I get my user entered dimensions into this?!?!
+	// Just a few chapters away in text.
+	public void paint(Graphics g)
+	{ 
+		g.drawRect(20, 150, 100, 100); 
+	} 
 
 }
