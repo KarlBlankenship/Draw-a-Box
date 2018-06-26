@@ -22,7 +22,7 @@ import javax.swing.JFrame;			//
 
 
 /*
-	The DrawABox class will create instances of the Box class and will diplay
+	The DrawABox class will create instances of the Box class and will display
 	a visual representation of the box in an output window.
 */
 
@@ -42,12 +42,12 @@ public class DrawABox extends Canvas
 		// Open a display window
 		// Generate lines connecting the coordinates
 		
-		/*
+		
 			// Test the Box class.
 			// Create a new instance using default constructor.
 			Box shippingBox = new Box();
 			// Create a new instance using the overload constructor.
-			Box bigBox = new Box(12.0, 8.0, 4.0);
+			Box bigBox = new Box(12.0, 200.0, 4.0);
 			// Get the length of the shippingBox instance.
 			System.out.println("length of shippingBox = " + shippingBox.getLength());
 			// Get the width of the shippingBox instance.
@@ -57,8 +57,9 @@ public class DrawABox extends Canvas
 			// Use toString to verify values of bigBox.
 			System.out.print("toString bigBox:" + bigBox.toString());
 			// Box Class is working.
-		*/
 		
+			
+			
 		/*
 			// Creation of dialog box code to ask for inputs.
 			// Test display a message.
@@ -99,7 +100,9 @@ public class DrawABox extends Canvas
 	// Just a few chapters away in text.
 	public void paint(Graphics g)
 	{ 
-		g.drawRect(20, 150, 100, 100); 
+		
+		g.drawRect(50, 50, 200, 100); 
+		//g.drawRect(50, 50, (int)bigBox.getWidth(), 100); //Does not work.
 	} 
 
 }
