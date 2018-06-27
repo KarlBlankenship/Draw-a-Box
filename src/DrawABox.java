@@ -43,6 +43,7 @@ public class DrawABox extends Canvas
 		// Generate lines connecting the coordinates
 		
 		
+		/*
 			// Test the Box class.
 			// Create a new instance using default constructor.
 			Box shippingBox = new Box();
@@ -57,13 +58,13 @@ public class DrawABox extends Canvas
 			// Use toString to verify values of bigBox.
 			System.out.print("toString bigBox:" + bigBox.toString());
 			// Box Class is working.
-		
+		*/
 			
 			
 		/*
 			// Creation of dialog box code to ask for inputs.
 			// Test display a message.
-			JOptionPane.showMessageDialog(null,  "Hello Box");
+			JOptionPane.showMessageDialog(null, "Hello Box");
 			// Test entering a dimension.
 			String dimension;
 			dimension = JOptionPane.showInputDialog("Enter a dimension.");
@@ -83,7 +84,7 @@ public class DrawABox extends Canvas
 		 // Create a simple rectangle
 			JFrame frame = new JFrame("Rectangle"); 	// Create a new window frame.
 			Canvas canvas = new DrawABox(); 			// Create a new canvas object
-			canvas.setSize(400, 400); 					// Set canvas size.
+			canvas.setSize(500, 500); 					// Set canvas size.
 			frame.add(canvas); 							// Add the canvas to the frame.
 			frame.pack(); 								// Fit the canvas to the frame.
 			frame.setVisible(true);						// Make frame visible.
@@ -100,9 +101,11 @@ public class DrawABox extends Canvas
 	// Just a few chapters away in text.
 	public void paint(Graphics g)
 	{ 
-		
-		g.drawRect(50, 50, 200, 100); 
-		//g.drawRect(50, 50, (int)bigBox.getWidth(), 100); //Does not work.
+		String dimHeight;
+		int width = Integer.parseInt(JOptionPane.showInputDialog("Enter the box width less than 300."));
+		dimHeight = JOptionPane.showInputDialog("Enter the box height less than 300.");
+		int height = Integer.parseInt(dimHeight);
+		g.drawRect(100, 100, width, height); 
 	} 
 
 }
